@@ -1,9 +1,10 @@
 #My first pipeline with GitHub actions
 
 name: myGithubActions_basics
+
 env:
   APPLICATION_NAME: "Myflask"
-  DEPLOY_PACKAGE_NAME: "flask_deploy_ver-${{ github.sha }}
+  DEPLOY_PACKAGE_NAME: "flask_deploy_ver-${{ github.sha }}"
 
 on:
    push:

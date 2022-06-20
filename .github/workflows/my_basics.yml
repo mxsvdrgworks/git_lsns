@@ -1,0 +1,23 @@
+#My first pipeline with GitHub actions
+
+name: myGithubActions_basics
+
+on:
+   push:
+    branches: [ "master"]
+    
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print hello message
+      run: echo "Hello from testing job"
+      
+  my_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print hello message
+      run: echo "Hello from deploy job"
+

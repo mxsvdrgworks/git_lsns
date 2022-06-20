@@ -21,8 +21,8 @@ jobs:
     - name: Execute few commands
       run: |
         echo "message 1"
-        echo "message2"
-        echo "Application name: ${{ env.APPLICATION_NAME }}
+        echo "message 2"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
       
   my_deploy:
     runs-on: ubuntu-latest

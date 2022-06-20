@@ -35,15 +35,25 @@ jobs:
       run: aws --version
       
     - name: Test some packages if there are present
-      run: zip
+      run: zip --version
       
   my_deploy:
     runs-on: ubuntu-latest
     needs: [my_testing]
+    env:
+      VAR1: "This is job level variable1"
     
     steps:
     - name: Print hello message in deploy
       run: echo "Hello from deploy job"
+      
+    - name: Print hello message in deploy
+      run: |
+        echo "Var1 = ${{ env.VAR1 }}"
+        echo "Var2 = ${{ env.VAR2 }}"
+        echo "ver3 = $LOCAL_VAR"
+      env:
+        LOCAL_VAR: "This is step level local variable"
       
     - name: Deployment package
       run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
